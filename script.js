@@ -9,7 +9,7 @@ navigator.mediaDevices.getUserMedia({video : true}).then((stream) => {
     
     webcamElement.srcObject = stream;
 
-    photo.src = webcamElement.snap
+    photo.src = webcamElement.snap()
 
 
 }).catch((err) => {
