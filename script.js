@@ -14,7 +14,7 @@ navigator.mediaDevices.getUserMedia({video : true}).then((stream) => {
     
     webcamElement.srcObject = stream;
 
-    canvas.getContext('2d').drawImage(webcamElement, 0, 0, 100, 100);
+    canvas.getContext('2d').drawImage(stream, 0, 0, 100, 100);
    
     const data = canvas.toDataURL("image/png");
     
