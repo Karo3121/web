@@ -14,10 +14,15 @@ navigator.mediaDevices.getUserMedia({video : true}).then((stream) => {
     
     webcamElement.srcObject = stream;
 
-    photo.src = webcam.snap()
+    photo.setAttribute("src", `${webcam.snap()}` ) 
 
 
 }).catch((err) => {
     console.error(err)
 })
+
+
+
+
+
 
