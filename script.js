@@ -7,20 +7,20 @@ const snapSoundElement = document.getElementById('snapSound');
 const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
 
 
+
 webcam.start()
    .then(result =>{
-      console.log("webcam started");
+       console.log("webcam started");
+
+       webcamElement.srcObj = result
+       
+       const photo = document.getElementById('photo')
+       
+       
+       var picture = webcam.snap();
+       
+       photo.src = picture
    })
    .catch(err => {
        console.log(err);
    });
-
-
-const photo = document.getElementById('photo')
-
-
-var picture = webcam.snap();
-
-photo.src = picture
-
-
