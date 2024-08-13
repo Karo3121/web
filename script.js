@@ -17,6 +17,6 @@ navigator.mediaDevices.getUserMedia({video : true}).then((stream) => {
 
 
 }).catch((err) => {
-    console.error(err)
+   
 })
 
