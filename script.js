@@ -1,5 +1,4 @@
 
-import Webcam from 'webcam-easy';
 
 
 const webcamElement = document.getElementById('webcam');
