@@ -1,26 +1,23 @@
 
 
 
+
+
+
 const webcamElement = document.getElementById('webcam');
-const canvasElement = document.getElementById('canvas');
-const snapSoundElement = document.getElementById('snapSound');
-const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
+const canvas = document.getElementById('canvas');
 
 
+navigator.mediaDevices.getUserMedia({video : true}).then((stream) => {
+    
+    
+    webcamElement.srcObject = stream;
 
-webcam.start()
-   .then(result =>{
-       console.log("webcam started");
 
-       webcamElement.srcObj = result
-       
-       const photo = document.getElementById('photo')
-       
-       
-       var picture = webcam.snap();
-       
-       photo.src = picture
-   })
-   .catch(err => {
-       console.log(err);
-   });
+    canvas.getContext('2d').drawImage(webcamElement, 0, 0, canvas.width, canvas.height);
+
+
+}).catch((err) => {
+    console.error(err)
+})
+
