@@ -5,7 +5,6 @@
 
 
 const webcamElement = document.getElementById('webcam');
-const canvas = document.getElementById('canvas');
 
 
 navigator.mediaDevices.getUserMedia({video : true}).then((stream) => {
@@ -14,7 +13,7 @@ navigator.mediaDevices.getUserMedia({video : true}).then((stream) => {
     webcamElement.srcObject = stream;
 
 
-    canvas.getContext('2d').drawImage(webcamElement, 0, 0, canvas.width, canvas.height);
+ 
 
 
 }).catch((err) => {
